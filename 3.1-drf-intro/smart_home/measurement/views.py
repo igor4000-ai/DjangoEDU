@@ -9,11 +9,7 @@ from measurement.serializers import (
 
 class SensorListView(generics.ListCreateAPIView):
     queryset = Sensor.objects.all()
-
-    def get_serializer_class(self):
-        if self.request.method == 'GET':
-            return SensorDetailSerializer
-        return SensorSerializer
+    serializer_class = SensorSerializer
 
 
 class SensorDetailView(generics.RetrieveUpdateAPIView):
