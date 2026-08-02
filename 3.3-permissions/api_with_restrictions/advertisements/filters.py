@@ -4,9 +4,10 @@ from advertisements.models import Advertisement
 
 
 class AdvertisementFilter(filters.FilterSet):
-    """Фильтры для объявлений."""
+    """Фильтры для объявления."""
 
-    # TODO: задайте требуемые фильтры
+    # TODO: добавьте фильтры по статусу и создателю
 
     class Meta:
         model = Advertisement
+        fields = ['status', 'creator']
